@@ -86,6 +86,17 @@ class Auth extends Component {
       })
   }
 
+  logout = () => {
+    axios.delete('/auth/logout').then(() => {
+      this.setState({
+        username: 'No user logged in',
+        revealed: false,
+        loginError: false,
+        registerError: false,
+      })
+    })
+  }
+
   render() {
     return (
       <div className="auth">
@@ -118,6 +129,9 @@ class Auth extends Component {
               Login
             </button>
           </div>
+          <button onClick={this.logout} className="auth-button">
+            Logout
+          </button>
         </div>
         <div
           className={`secret-stuff ${
