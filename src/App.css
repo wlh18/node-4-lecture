@@ -1,38 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.auth {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(31, 42, 42);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5%;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.auth-box {
+  background-color: lightslategray;
+  width: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 25px;
+  justify-content: space-evenly;
+  min-height: 25%;
+}
+
+.auth-button {
+  outline: none;
+  border: 1px solid white;
+  padding: 5px;
+  background-color: black;
   color: white;
+  border-radius: 0;
+  margin: 0 10px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.secret-stuff {
+  width: 40%;
+  height: 25%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hidden {
+  background-color: darkseagreen;
+}
+
+.hidden::after {
+  content: 'SECRET STUFF IS HIDDEN';
+}
+
+.revealed {
+  background-image: url('https://twilio-cms-prod.s3.amazonaws.com/images/21VC0iKKbFDAY_yVLwtESY3v5-C2KbIh8B-B0q7yU2CGeI.width-808.png');
+  background-size: 100%;
+  background-position: cover;
+  background-repeat: no-repeat;
+}
+
+.error {
+  color: red;
+  font-size: 11px;
 }
